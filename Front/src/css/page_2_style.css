@@ -1,0 +1,103 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px; /*размер шрифта */
+    line-height: 1.6;
+    color: #000000;
+}
+*,
+*:after,
+*:before {    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+/* Container */
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Intro*/
+.intro{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    /* left: 1100px; */
+
+    background: url("../images/right.png");
+}
+
+.intro_title{
+    font-size: 128px;
+    font-weight: 140;
+    text-align: center;
+    color: #59CA31;
+    font-family: 'Moon Dance', cursive;
+
+    padding-top: 142px;
+}
+
+/* Header*/
+.header{
+    width: 100%;
+    padding-top: 30px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header_inner{
+    display: flex;
+    /*justify-weight: space-between;*/
+    align-items: center;
+}
+
+/* nav*/
+/*.nav{
+    font-size: 24px;
+}
+.nav_link{
+    dislay: inline-block;
+    vertical-align: top;
+    margin: 0 80px;
+    position: static;
+
+    color:#000000;
+    text-decoration: none;
+
+    transition: color .2s linear; /*чтобы цвет плавно мемнялся, при нажатии на кнопку*/
+/*}
+
+.nav_link:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    display: none;
+
+    background-color: #59CA31;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity .1s linear;
+}
+
+.nav_link:hover{
+    color:#59CA31;
+}
+
+.nav_link:hover:after{
+    opacity: 1;
+    display: block;
+}
+*/

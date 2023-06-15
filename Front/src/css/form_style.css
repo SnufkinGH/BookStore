@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background:
+            url("../images/background.png") center no-repeat;
+    -webkit-background-size: cover;
+}
+
+.container_form{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h4{
+    text-transform: uppercase;
+}
+
+.form{
+    margin: 300px auto;
+    width: 450px;
+    padding: 30px;
+    color: #59CA31;
+    text-align: center;
+    background-color: #52ff8a;
+}
+
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="submit"]{
+    background: none;
+    color: green;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 250px;
+    border: 2px solid mediumseagreen;
+    outline: none;
+    transition: .3s;
+}
+
+.form input[type="text"]:focus,
+.form input[type="password"]:focus{
+    width: 300px;
+    border-color: green;
+}
+
+.form input[type="text"]::placeholder,
+.form input[type="password"]::placeholder{
+    color: green;
+}
+
+.form input[type="submit"]:hover{
+    border-color: green;
+    background: green;
+    color: #59CA31;
+    cursor: pointer;
+}

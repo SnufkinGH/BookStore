@@ -1,0 +1,58 @@
+CREATE TABLE author(
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE publisher(
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(50) NOT NULL,
+	description VARCHAR(300)
+);
+
+CREATE TABLE book(
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(50) NOT NULL,
+	author_id INT NOT NULL,
+	publisher_id INT NOT NULL,
+	price INT NOT NULL,
+	amount INT,
+	description VARCHAR(300),
+	FOREIGN KEY (author_id) REFERENCES author(id),
+	FOREIGN KEY (publisher_id) REFERENCES publisher(id)
+);
+
+CREATE TABLE user_info(
+	id SERIAL PRIMARY KEY,
+	email VARCHAR(50) NOT NULL,
+	password VARCHAR(50) NOT NULL,
+	role VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE token(
+	user_id INT NOT NULL,
+	refresh_token VARCHAR(150) NOT NULL
+);
+
+CREATE USER andrey WITH PASSWORD 'root';
+GRANT ALL PRIVILEGES ON DATABASE "book" to andrey;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "andrey";
+
+
+INSERT INTO author(name) VALUES('Иоганн Вольфганг фон Гёте');
+INSERT INTO author(name) VALUES('Данте Алигьери');
+
+
+INSERT INTO publisher(title, description) VALUES('ACT', 'Книги практически всех жанров для самой широкой аудитории');
+INSERT INTO publisher(title, description) VALUES('ЭКСМО', 'Выпуск высококачественной книжной продукции, увеличение количества читающих 
+    россиян и рост интеллектуального потенциала России.');
+
+
+INSERT INTO book(title, author_id, publisher_id, price, amount, description) 
+	VALUES('Фауст', 1, 2, 410, 7, 'Под пером Иоганна Вольфганга Гёте средневековая легенда 
+		   превратилась в великую трагедию о цели человеческого бытия, о поиске смысла жизни.');
+
+INSERT INTO book(title, author_id, publisher_id, price, amount, description) 
+	VALUES('Божественная комедия', 2, 1, 500, 11, 'Политическая злободневность "Божественной комедии" 
+		   давно пропала, но остались и бессмертная красота языка Данте, и мощь его литературного таланта,
+		   и сила философской мысли, предвосхитившей духовные и нравственные искания 
+		   гуманистических гениев Возрождения.');
